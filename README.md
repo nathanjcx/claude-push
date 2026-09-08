@@ -12,7 +12,9 @@ git clone https://github.com/nathanjcx/claude-push ~/claude-push
 ~/claude-push/install.sh
 ```
 
-Restart Claude Code once after installing. Requires the [GitHub CLI](https://cli.github.com) (`brew install gh`, then `gh auth login`).
+Restart Claude Code once after installing.
+
+`/pr` needs the [GitHub CLI](https://cli.github.com) — `brew install gh && gh auth login`. The installer will point that out if it's missing, but still installs the commands so `/push` works right away.
 
 ## `/push`
 
