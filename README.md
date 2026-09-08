@@ -67,3 +67,7 @@ Want it to allow commits to `main`? Delete the "Branch guard" section of `push.m
 ```
 
 Only removes symlinks it created — a `/push` of your own is left alone.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
