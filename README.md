@@ -31,6 +31,19 @@ a1b2c3d fix: retry token refresh on 401
 
 `/push some context here` passes you a hint for the branch name and message.
 
+## Works from any directory
+
+Neither command is tied to your session's working directory. If you're running Claude Code somewhere that isn't a git repo — or is a *different* repo from the one you've been editing — `/push` and `/pr` scan for repos with pending work and target the right one:
+
+```
+$ /push                      # session rooted at ~/Desktop
+~/claude-push (not cwd)
+a1b2c3d fix: guard context lookups outside a git repo
+→ pushed fix/context-lookups → https://github.com/you/claude-push/tree/fix/context-lookups
+```
+
+Resolution order: a repo named in your arguments (`/push claude-push`) → the repo you're standing in → the only repo with pending work → the repo you've been editing this session. If it's still ambiguous it lists the candidates and asks rather than guessing. The target repo is always named in the output when it isn't your current directory.
+
 ## `/pr`
 
 ```
